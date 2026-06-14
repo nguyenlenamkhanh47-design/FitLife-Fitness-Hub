@@ -10,7 +10,10 @@ body{
     line-height:1.6;
     background:#f4f7fa;
     color:#333;
+    transition:0.3s;
 }
+
+/* CONTAINER */
 
 .container{
     max-width:1200px;
@@ -30,11 +33,14 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
 }
 
 header h1{
     font-size:2rem;
 }
+
+/* NAVIGATION */
 
 nav ul{
     list-style:none;
@@ -50,34 +56,39 @@ nav a{
 }
 
 nav a:hover{
-    color:#86efac;
+    color:#bbf7d0;
 }
 
 /* BUTTONS */
 
 #themeBtn{
-    padding:10px 15px;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
     background:#22c55e;
     color:white;
+    border:none;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+#themeBtn:hover{
+    background:#16a34a;
 }
 
 .btn{
     display:inline-block;
-    margin-top:25px;
-    padding:12px 25px;
     background:white;
     color:#166534;
     text-decoration:none;
+    padding:12px 25px;
     border-radius:8px;
     font-weight:bold;
+    margin-top:25px;
     transition:0.3s;
 }
 
 .btn:hover{
-    transform:translateY(-3px);
+    transform:translateY(-4px);
 }
 
 /* HERO */
@@ -85,12 +96,17 @@ nav a:hover{
 .hero{
     background:linear-gradient(
         135deg,
-        #16a34a,
-        #14532d
+        #22c55e,
+        #166534
     );
     color:white;
     text-align:center;
     padding:120px 20px;
+}
+
+.hero-content{
+    max-width:700px;
+    margin:auto;
 }
 
 .hero h2{
@@ -99,9 +115,7 @@ nav a:hover{
 }
 
 .hero p{
-    max-width:700px;
-    margin:auto;
-    font-size:1.1rem;
+    font-size:1.2rem;
 }
 
 /* SECTION */
@@ -114,8 +128,9 @@ nav a:hover{
 
 .section h2{
     text-align:center;
-    margin-bottom:30px;
     color:#166534;
+    margin-bottom:35px;
+    font-size:2rem;
 }
 
 /* CARDS */
@@ -129,7 +144,7 @@ nav a:hover{
 .card{
     background:white;
     padding:25px;
-    border-radius:12px;
+    border-radius:15px;
     box-shadow:0 4px 15px rgba(0,0,0,0.1);
     transition:0.3s;
 }
@@ -139,6 +154,7 @@ nav a:hover{
 }
 
 .card h3{
+    color:#166534;
     margin-bottom:15px;
 }
 
@@ -147,6 +163,7 @@ nav a:hover{
 .tips{
     max-width:700px;
     margin:auto;
+    padding-left:25px;
 }
 
 .tips li{
@@ -154,14 +171,14 @@ nav a:hover{
     font-size:1.1rem;
 }
 
-/* DETAILS */
+/* FAQ */
 
 details{
     background:white;
     margin-bottom:15px;
     padding:15px;
-    border-radius:8px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 summary{
@@ -169,7 +186,7 @@ summary{
     font-weight:bold;
 }
 
-/* FORM */
+/* FORMS */
 
 form{
     max-width:600px;
@@ -177,6 +194,10 @@ form{
     display:flex;
     flex-direction:column;
     gap:15px;
+}
+
+label{
+    font-weight:bold;
 }
 
 input,
@@ -187,26 +208,32 @@ textarea{
     font-size:16px;
 }
 
+textarea{
+    resize:vertical;
+}
+
 form button{
-    background:#16a34a;
+    background:#22c55e;
     color:white;
     border:none;
     padding:12px;
     border-radius:8px;
     cursor:pointer;
+    font-size:16px;
 }
 
 form button:hover{
-    opacity:0.9;
+    background:#16a34a;
 }
 
 /* BMI RESULT */
 
 #result{
+    margin-top:25px;
     text-align:center;
-    margin-top:20px;
     font-size:1.3rem;
     font-weight:bold;
+    color:#166534;
 }
 
 /* FOOTER */
@@ -215,7 +242,8 @@ footer{
     background:#166534;
     color:white;
     text-align:center;
-    padding:25px;
+    padding:30px;
+    margin-top:50px;
 }
 
 /* TOP BUTTON */
@@ -228,11 +256,16 @@ footer{
     height:50px;
     border:none;
     border-radius:50%;
-    background:#16a34a;
+    background:#22c55e;
     color:white;
     font-size:20px;
-    display:none;
     cursor:pointer;
+    display:none;
+    box-shadow:0 2px 10px rgba(0,0,0,0.2);
+}
+
+#topBtn:hover{
+    background:#16a34a;
 }
 
 /* DARK MODE */
@@ -243,7 +276,7 @@ footer{
 }
 
 .dark .section h2{
-    color:#86efac;
+    color:#bbf7d0;
 }
 
 .dark .card,
@@ -259,9 +292,17 @@ footer{
     border:none;
 }
 
+.dark footer{
+    background:#0b3b1f;
+}
+
+.dark #result{
+    color:#bbf7d0;
+}
+
 /* RESPONSIVE */
 
-@media(max-width:768px){
+@media (max-width:768px){
 
     .container{
         flex-direction:column;
@@ -273,12 +314,15 @@ footer{
         justify-content:center;
     }
 
-    .cards{
-        grid-template-columns:1fr;
-    }
-
     .hero h2{
         font-size:2rem;
     }
 
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:60px 20px;
+    }
 }
